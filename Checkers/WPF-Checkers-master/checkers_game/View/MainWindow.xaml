@@ -1,0 +1,245 @@
+﻿<Window x:Class="checkers_game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:checkers_game.ViewModels"
+        mc:Ignorable="d"
+        Title="WPF Checkers" Height="782" MinHeight="800" MaxHeight="800" Width="766.4" MinWidth="800" MaxWidth="800" Background="{DynamicResource WindowBackgroundBrush}">
+    <Window.DataContext>
+        <local:GameVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="70"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Georgia"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontFamily" Value="Georgia"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+
+        </Style>
+        <LinearGradientBrush x:Key="WindowBackgroundBrush">
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset=".5" Color="DarkGray"/>
+            <GradientStop Offset="1" Color="WhiteSmoke"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="side_grid_BackgroundBrush">
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset=".5" Color="DarkGray"/>
+            <GradientStop Offset="1" Color="WhiteSmoke"/>
+        </LinearGradientBrush>
+
+
+
+
+    </Window.Resources>
+
+
+    <Grid x:Name="Container" Margin="0,0,32.6,0.4">
+        <Grid x:Name ="Board" Margin="0,0,-33,1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+
+            <Button  Click="Button_Click" x:Name="b1"  BorderBrush = "SlateGray" Grid.Column ="0" Grid.Row ="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b2"  BorderBrush = "SlateGray" Grid.Column ="2" Grid.Row ="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b3"  BorderBrush = "SlateGray" Grid.Column ="4" Grid.Row ="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b4"  BorderBrush = "SlateGray" Grid.Column ="6" Grid.Row ="0">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <Button  Click="Button_Click" x:Name="b5"  BorderBrush = "SlateGray" Grid.Column ="1" Grid.Row ="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b6"  BorderBrush = "SlateGray" Grid.Column ="3" Grid.Row ="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b7"  BorderBrush = "SlateGray" Grid.Column ="5" Grid.Row ="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b8"  BorderBrush = "SlateGray" Grid.Column ="7" Grid.Row ="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <Button  Click="Button_Click" x:Name="b9"  BorderBrush = "SlateGray" Grid.Column ="0" Grid.Row ="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b10"  BorderBrush = "SlateGray" Grid.Column ="2" Grid.Row ="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b11"  BorderBrush = "SlateGray" Grid.Column ="4" Grid.Row ="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b12"  BorderBrush = "SlateGray" Grid.Column ="6" Grid.Row ="2">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <Button  Click="Button_Click" x:Name="b13"  BorderBrush = "SlateGray" Grid.Column ="1" Grid.Row ="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b14"  BorderBrush = "SlateGray" Grid.Column ="3" Grid.Row ="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b15"  BorderBrush = "SlateGray" Grid.Column ="5" Grid.Row ="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b16"  BorderBrush = "SlateGray" Grid.Column ="7" Grid.Row ="3">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <Button  Click="Button_Click" x:Name="b17"  BorderBrush = "SlateGray" Grid.Column ="0" Grid.Row ="4">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b18"  BorderBrush = "SlateGray" Grid.Column ="2" Grid.Row ="4">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b19"  BorderBrush = "SlateGray" Grid.Column ="4" Grid.Row ="4">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b20"  BorderBrush = "SlateGray" Grid.Column ="6" Grid.Row ="4">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+
+            <Button  Click="Button_Click" x:Name="b21"  BorderBrush = "SlateGray" Grid.Column ="1" Grid.Row ="5">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b22"  BorderBrush = "SlateGray" Grid.Column ="3" Grid.Row ="5">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b23"  BorderBrush = "SlateGray" Grid.Column ="5" Grid.Row ="5">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b24"  BorderBrush = "SlateGray" Grid.Column ="7" Grid.Row ="5">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b25"  BorderBrush = "SlateGray" Grid.Column ="0" Grid.Row ="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b26"  BorderBrush = "SlateGray" Grid.Column ="2" Grid.Row ="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b27"  BorderBrush = "SlateGray" Grid.Column ="4" Grid.Row ="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b28"  BorderBrush = "SlateGray" Grid.Column ="6" Grid.Row ="6">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b29"  BorderBrush = "SlateGray" Grid.Column ="1" Grid.Row ="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b30"  BorderBrush = "SlateGray" Grid.Column ="3" Grid.Row ="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b31"  BorderBrush = "SlateGray" Grid.Column ="5" Grid.Row ="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+            <Button  Click="Button_Click" x:Name="b32"  BorderBrush = "SlateGray" Grid.Column ="7" Grid.Row ="7">
+                <Button.Background>
+                    <ImageBrush ImageSource="{Binding ImageSource,UpdateSourceTrigger=PropertyChanged}" Stretch="Fill" />
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        
+
+    </Grid>
+</Window>
